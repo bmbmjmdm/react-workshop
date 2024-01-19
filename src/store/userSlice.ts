@@ -4,7 +4,7 @@ import { RootState } from "./store";
 export interface UserState {
   error: string;
   username: string;
-  theme: "blue" | "default";
+  theme: "red" | "default";
 }
 
 const initialState: UserState = {
@@ -22,9 +22,9 @@ export const userSlice = createSlice({
     login: (state, action) => {
       if (action.payload.username && action.payload.password) {
         state.username = action.payload.username;
-        if (action.payload.blue) {
-          state.theme = "blue";
-        } 
+        if (action.payload.red) {
+          state.theme = "red";
+        }
       } else {
         state.error = "Invalid username or password";
       }

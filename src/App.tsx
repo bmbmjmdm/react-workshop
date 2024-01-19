@@ -20,17 +20,17 @@ import { selectTheme } from "./store/userSlice";
 
 const themes = {
   default: {},
-  blue: {
+  red: {
     palette: {
       primary: {
-        main: "#2196f3",
+        main: "#ff0000",
       },
     },
   },
-}
+};
 
 const InnerApp = () => {
-  const userTheme = useAppSelector(selectTheme)
+  const userTheme = useAppSelector(selectTheme);
   const theme = createTheme(themes[userTheme]);
   return (
     <ThemeProvider theme={theme}>

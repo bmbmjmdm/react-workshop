@@ -27,10 +27,10 @@ function Login() {
   // setup local state variables
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
-  const [stayLoggedIn, setStayLoggedIn] = React.useState(false);
+  const [red, setRed] = React.useState(false);
 
   const handleSubmit = () => {
-    dispatch(login({ username, password }));
+    dispatch(login({ username, password, red }));
   };
 
   useEffect(() => {
@@ -71,14 +71,13 @@ function Login() {
             control={
               <Checkbox
                 color="primary"
-                checked={stayLoggedIn}
-                onChange={(e) => setStayLoggedIn(e.target.checked)}
+                checked={red}
+                onChange={(e) => setRed(e.target.checked)}
               />
             }
-            label="Remember me"
+            label="Red Theme"
           />
           <Button
-            type="submit"
             onClick={handleSubmit}
             fullWidth
             variant="contained"
