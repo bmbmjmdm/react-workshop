@@ -115,7 +115,7 @@ function Copyright(props: any) {
     >
       {"Copyright © "}
       <Link color="inherit" href="https://mui.com/">
-        Your Website
+        Cats Co
       </Link>{" "}
       {new Date().getFullYear()}
       {"."}

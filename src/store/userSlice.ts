@@ -1,17 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "./store";
-import { Theme, createTheme } from "@mui/material";
 
 export interface UserState {
   error: string;
   username: string;
-  theme: Theme;
+  theme: "blue" | "default";
 }
 
 const initialState: UserState = {
   error: "",
   username: "",
-  theme: createTheme(),
+  theme: "default",
 };
 
 // The slice contains all of our state information, reducers, actions, etc for the user
@@ -23,6 +22,9 @@ export const userSlice = createSlice({
     login: (state, action) => {
       if (action.payload.username && action.payload.password) {
         state.username = action.payload.username;
+        if (action.payload.blue) {
+          state.theme = "blue";
+        } 
       } else {
         state.error = "Invalid username or password";
       }

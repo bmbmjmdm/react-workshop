@@ -14,11 +14,24 @@ import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
+import { createTheme } from "@mui/material";
 import { useAppSelector } from "./store/hooks";
 import { selectTheme } from "./store/userSlice";
 
+const themes = {
+  default: {},
+  blue: {
+    palette: {
+      primary: {
+        main: "#2196f3",
+      },
+    },
+  },
+}
+
 const InnerApp = () => {
-  const theme = useAppSelector(selectTheme);
+  const userTheme = useAppSelector(selectTheme)
+  const theme = createTheme(themes[userTheme]);
   return (
     <ThemeProvider theme={theme}>
       <Router>
