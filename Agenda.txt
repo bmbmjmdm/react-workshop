@@ -1,0 +1,58 @@
+Today we're going to be creating a simple login screen in React. 
+
+We'll be learning about several key concepts/libraries:
+- components, props & state, hooks, re-rendering
+- Material UI
+- React Router
+- Redux
+- Jest?
+
+
+{ Repo has everything however the following are missing: 
+- react hooks/state in Cats/Login
+- Meat of redux (selectors, reducers, actions) 
+- Cat route in navigation
+- redux or nav code in cats/login
+- some CSS for MaterialUI components (pick one that we can break out and restlye)
+}
+
+Components
+- use XML instead of calling them as functions
+- render phase vs reconsiliation phase
+- class components vs function components
+- smaller is better
+{  }
+
+[Transition - ]
+
+MetialUI
+- Pre-packaged HTML + CSS
+- Quick, consistent
+- Customizable with your own CSS (basic example)
+- Themeable (basic example)
+{  }
+
+[Transition - ]
+
+Components innards
+- re-rendering
+- props
+- hooks & state
+{  }
+
+[Transition - lets say I want a change in this component to rerender another one though. Or maybe these components share some state]
+
+Data organization
+- Props
+- Redux
+- Context
+{  }
+
+[Transition - ]
+
+React Router
+- Basically a big context with extra bells and whistles
+- updating browser stuff for you
+- Can also handle stuff like loading screens, screen transitions, redirects, etc
+{  }
+
