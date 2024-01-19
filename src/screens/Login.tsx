@@ -1,6 +1,4 @@
-import React, { useEffect, useRef } from "react";
-import { useAppDispatch, useAppSelector } from "../store/hooks";
-import { login, selectError, selectUsername } from "../store/userSlice";
+import React from "react";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -12,33 +10,9 @@ import Box from "@mui/material/Box";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
-import { useNavigate } from "react-router-dom";
-import LoginInput from "../components/LoginInput";
+import { TextField } from "@mui/material";
 
 function Login() {
-  // setup a constant dispatch to be used for async actions
-  const dispatch = useAppDispatch();
-  const navigate = useNavigate();
-
-  // setup shared state variables by retrieving them from the store
-  const error = useAppSelector(selectError);
-  const isLoggedIn = useAppSelector(selectUsername);
-
-  // setup local state variables
-  const [username, setUsername] = React.useState("");
-  const [password, setPassword] = React.useState("");
-  const [red, setRed] = React.useState(false);
-
-  const handleSubmit = () => {
-    dispatch(login({ username, password, red }));
-  };
-
-  useEffect(() => {
-    if (isLoggedIn) {
-      navigate("/cats");
-    }
-  }, [isLoggedIn]);
-
   // render a simple login page with a title, a form with a username and password field, and a submit button
   return (
     <Container component="main" maxWidth="xs">
@@ -58,31 +32,18 @@ function Login() {
           Sign in
         </Typography>
         <Box component="form" sx={{ mt: 1 }}>
-          <LoginInput
-            onChange={(val: string) => setUsername(val)}
-            value={username}
-          />
-          <LoginInput
-            isPassword
-            onChange={(val: string) => setPassword(val)}
-            value={password}
+          <TextField margin="normal" fullWidth autoComplete="username" />
+          <TextField
+            margin="normal"
+            fullWidth
+            type="password"
+            autoComplete="current-password"
           />
           <FormControlLabel
-            control={
-              <Checkbox
-                color="primary"
-                checked={red}
-                onChange={(e) => setRed(e.target.checked)}
-              />
-            }
-            label="Red Theme"
+            control={<Checkbox color="primary" />}
+            label="Check me or not"
           />
-          <Button
-            onClick={handleSubmit}
-            fullWidth
-            variant="contained"
-            sx={{ mt: 3, mb: 2 }}
-          >
+          <Button fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
             Sign In
           </Button>
           <Grid container>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Button,
   Card,
@@ -16,17 +16,14 @@ type CatCardProps = {
   image: string;
 };
 const CatCard = (props: CatCardProps) => {
-  const { name, description, image } = props;
-  const [isPet, setPet] = useState(false);
-
   return (
     <Grid item xs={3}>
-      <Card className={`${isPet ? "shaking" : ""}`}>
+      <Card className={`${true ? "shaking" : ""}`}>
         <CardActionArea>
           <CardMedia
             component="img"
             height="140"
-            image={`https://cdn2.thecatapi.com/images/${image}.jpg`}
+            image={`https://cdn2.thecatapi.com/images/${123}.jpg`}
             loading={"lazy"}
             sx={{
               objectFit: "cover",
@@ -35,15 +32,15 @@ const CatCard = (props: CatCardProps) => {
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
-              {name}
+              {"Cat name"}
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              {description}
+              {"Cat description"}
             </Typography>
           </CardContent>
         </CardActionArea>
         <CardActions>
-          <Button size="small" color="primary" onClick={() => setPet(!isPet)}>
+          <Button size="small" color="primary">
             Pet
           </Button>
         </CardActions>
