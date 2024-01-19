@@ -59,12 +59,12 @@ function Login() {
         </Typography>
         <Box component="form" sx={{ mt: 1 }}>
           <LoginInput
-            onChange={(val:string) => setUsername(val)}
+            onChange={(val: string) => setUsername(val)}
             value={username}
           />
           <LoginInput
             isPassword
-            onChange={(val:string) => setPassword(val)}
+            onChange={(val: string) => setPassword(val)}
             value={password}
           />
           <FormControlLabel

@@ -5,9 +5,8 @@ type LoginInputProps = {
   value: string;
   onChange: (newVal: string) => void;
   isPassword?: boolean;
-}
-const LoginInput = (props:LoginInputProps) => {
-  
+};
+const LoginInput = (props: LoginInputProps) => {
   const { value, onChange, isPassword } = props;
   const type = isPassword ? "password" : undefined;
   const autoComplete = isPassword ? "current-password" : "username";
@@ -28,7 +27,7 @@ const LoginInput = (props:LoginInputProps) => {
       }}
       */
     />
-  )
-}
+  );
+};
 
 export default LoginInput;

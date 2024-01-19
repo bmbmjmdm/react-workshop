@@ -14,8 +14,8 @@ type CatCardProps = {
   name: string;
   description: string;
   image: string;
-}
-const CatCard = (props:CatCardProps) => {
+};
+const CatCard = (props: CatCardProps) => {
   const { name, description, image } = props;
   const [isPet, setPet] = useState(false);
 
@@ -37,26 +37,19 @@ const CatCard = (props:CatCardProps) => {
             <Typography gutterBottom variant="h5" component="div">
               {name}
             </Typography>
-            <Typography
-              variant="body2"
-              color="text.secondary"
-            >
+            <Typography variant="body2" color="text.secondary">
               {description}
             </Typography>
           </CardContent>
         </CardActionArea>
         <CardActions>
-          <Button
-            size="small"
-            color="primary"
-            onClick={() => setPet(!isPet)}
-          >
+          <Button size="small" color="primary" onClick={() => setPet(!isPet)}>
             Pet
           </Button>
         </CardActions>
       </Card>
     </Grid>
-  )
-}
+  );
+};
 
 export default CatCard;

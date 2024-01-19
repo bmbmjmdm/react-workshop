@@ -6,11 +6,7 @@ import {
   selectLoading,
   fetchCats,
 } from "../store/catSlice";
-import {
-  CircularProgress,
-  Box,
-  Grid,
-} from "@mui/material";
+import { CircularProgress, Box, Grid } from "@mui/material";
 import "./Cats.css";
 import { selectUsername } from "../store/userSlice";
 import { useNavigate } from "react-router-dom";

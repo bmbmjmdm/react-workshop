@@ -29,15 +29,15 @@ const InnerApp = () => {
         </Routes>
       </Router>
     </ThemeProvider>
-  )
-}
+  );
+};
 
 const App = () => {
   return (
     <Provider store={store}>
       <InnerApp />
     </Provider>
-  )
-}
+  );
+};
 
-export default App
+export default App;
