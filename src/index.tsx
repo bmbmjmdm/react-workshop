@@ -1,37 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
-import { store } from "./store/store";
-import { Provider } from "react-redux";
-import Cats from "./screens/Cats";
-import Login from "./screens/Login";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-} from "react-router-dom";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
-
-const defaultTheme = createTheme();
+import App from "./App";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <Provider store={store}>
-      <ThemeProvider theme={defaultTheme}>
-        <Router>
-          <Routes>
-            <Route path="/" element={<Navigate to="/login" />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/cats" element={<Cats />} />
-          </Routes>
-        </Router>
-      </ThemeProvider>
-    </Provider>
+    <App />
   </React.StrictMode>
 );
 
