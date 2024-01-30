@@ -5,54 +5,81 @@ We'll be learning about several key concepts/libraries:
 - Material UI
 - React Router
 - Redux
-- Jest?
 
 
-{ Repo has everything however the following are missing: 
+{ 
+Repo has everything however the following are missing: 
 - react hooks/state in Cats/Login
-- Meat of redux (selectors, reducers, actions) 
+- Meat of user redux slice (selectors, reducers, actions) 
 - Cat route in navigation
 - redux or nav code in cats/login
-- some CSS for MaterialUI components (pick one that we can break out and restlye)
+- the broken out text input is not broke nout or styled yet
+- the new theme materialUI is not there yet
 }
+
+[Beginning - Let's start by talking about components. These differ from normal HTML or javascript in a few ways, and are the building blocks of React's virtual dom framework]
 
 Components
 - use XML instead of calling them as functions
 - render phase vs reconsiliation phase
 - class components vs function components
 - smaller is better
-{  }
+{ Exemplify breaking text input out }
 
-[Transition - ]
+[Transition - Now lets take a quick look at MaterialUI's components specifically. Most of the time when you develop, you'll be creating custom pages and custom components. But MaterialUI covers a lot of (almost all) of the most basic components for us. We can break out components like we did to create shorthands for standard props, or to further customize these components (these are called wrapper components). If that's not possible, you can always fall back on creating a custom component from scratch.]
 
 MetialUI
 - Pre-packaged HTML + CSS
 - Quick, consistent
 - Customizable with your own CSS (basic example)
 - Themeable (basic example)
-{  }
+{
+exemplify by modifying text input:
+-Show component prop change to use a different theme color
+-then show changing that theme color in the actual theme
+-then show a custom css change like margin or
+}
 
-[Transition - ]
+[Transition - So now that we have our text inputs, we need to store the text within them]
 
 Components innards
 - re-rendering
 - props
 - hooks & state
-{  }
+{
+- add props to text input
+- add state vars in parent to control text input
+}
 
-[Transition - lets say I want a change in this component to rerender another one though. Or maybe these components share some state]
+[Transition - Passing props like this is great for small, local cases, but what if I need to share information across the entire app? I don't want to pass it all the way up and then all the way down a sprawling, massive tree of components]
 
 Data organization
-- Props
+- Passing data with props vs global state with redux
 - Redux
 - Context
-{  }
+{
+- add user reducers/actions
+- add login functionality to home screen
+}
 
-[Transition - ]
+[Transition - Now that we have some global state and a login page, it makes sense to add another page!]
 
 React Router
 - Basically a big context with extra bells and whistles
 - updating browser stuff for you
 - Can also handle stuff like loading screens, screen transitions, redirects, etc
-{  }
+{
+- add a route to cats page
+- add a useEffect on homepage to navigate to cats after login
+- add a useEffect to cats to navigate to login if we're not logged in
+}
 
+[Transition - Let's populate this page using the principles we've learned]
+
+Bring it all together
+{
+- add data fetching in cats page
+- add data selecting in cats page
+- add animation in cats page
+- if theres time, change the "remember me" checkbox on login page to be "blue cats". This will update the redux state on login to change the theme so that all the cat text is blue
+}
